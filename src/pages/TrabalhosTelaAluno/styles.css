@@ -1,0 +1,142 @@
+.listagemtrabalhos-container{
+    width: 100%;
+    max-width: 1180px;
+    padding: 0 30px;
+    margin: 32px auto;
+    background-color:  #dbdee4;
+    border-radius: 8px;
+
+}
+
+.listagemtrabalhos-container header{
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+.listagemtrabalhos-container h1{
+    margin-top: 120px;
+    margin-bottom: 24px;
+    margin-left: 10px;
+    color: rgba(0, 0, 0, 0.753);
+}
+
+.listagemtrabalhos-container header span{
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.listagemtrabalhos-container header span strong{
+    
+    color: #128149;
+}
+
+.listagemtrabalhos-container header img{
+    width: 190px;
+    height: 180px;
+}
+
+.listagemtrabalhos-container header a{
+    width: 260px;
+    margin-left: auto;
+    margin-top: 0;
+}
+
+.listagemtrabalhos-container header button{
+    height: 60px;
+    width: 60px;
+    border-radius: 4px;
+    border: 1px solid #0c0b0c42;
+    background-color: transparent;
+    margin-left: 20px;
+    transition: border-color 0.5s;
+}
+
+.botoes-usuario{
+    margin-left: 500px;
+}
+
+.listagemtrabalhos-container header button:hover{
+    border-color: #251FC5;
+}
+
+.listagemtrabalhos-container h1{
+    margin-top: 10px;
+    margin-bottom: 24px;
+}
+
+.listagemtrabalhos-container ul{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 24px;
+    list-style: none;
+}
+
+.listagemtrabalhos-container ul li{
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    position: relative;
+    
+}
+
+.listagemtrabalhos-container ul li button{
+    margin-right: 10px;
+    margin-top: 15px;
+    right: auto;
+    top: auto;
+    border: 0;
+    background: transparent;
+    position: static;
+}
+
+.listagemtrabalhos-container ul li button + button{
+    top: 50px;
+}
+
+.listagemtrabalhos-container ul li button:hover{
+    opacity: 0.8;
+}
+
+.listagemtrabalhos-container ul li strong{
+    display: block;
+    margin-bottom: 16px;
+    color: #41441D;
+}
+
+
+.listagemtrabalhos-container ul li p+ strong{
+  margin-top: 32px;
+}
+
+
+.cadastro-alunocontainer ul li p{
+    color: #737380;
+    line-height: 21px;
+    font-size: 16px;
+}
+
+.container-area-aluno{
+   display: flex;
+   justify-content: left;
+   width: 800px;
+}
+
+.listagemtrabalhos-container trabalhos{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.listagemtrabalhos-container trabalhos input-group{
+    justify-content: center;
+    border-radius: 20px;
+}
+
+
+.icone-botao{
+    display: inline-block;
+    margin-right: 10px;
+}
+

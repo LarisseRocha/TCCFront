@@ -1,0 +1,77 @@
+.Novo-Trabalho-container{
+    width: 90%;
+    max-width: 1120px;
+    height: 100vh;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Novo-Trabalho-container .content{
+    width: 100%;
+    padding: 96px;
+    background: #F0F0F5;
+    box-shadow: 5px 5px 5px 5px rgb(155, 148, 148);
+
+    border-radius:10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Novo-Trabalho-container section.form{
+    width: 100%;
+    max-width: 350px;
+    margin-right: 30px;
+}
+
+.Novo-Trabalho-container section.form form {
+
+    margin-top: -90px;
+    margin-left: auto;
+    
+}
+
+.Novo-Trabalho-container section.form img{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.Novo-Trabalho-container .content section h1{
+    margin: 64px 0 32px;
+    font-size: 32px;
+}
+
+.Novo-Trabalho-container section p{
+    font-size: 18px;
+    color: #737380;
+    line-height: 32px;
+}
+
+.Novo-Trabalho-container .content form{
+    width: 100%;
+    max-width: 450px;
+}
+
+.Novo-Trabalho-container .content form input{
+    margin-top: 8px;
+}
+
+.Novo-Trabalho-container form button{
+    height: 40px;
+    border-radius: 10px;
+    background-color: #149133;
+    margin-left: 16px;
+    margin-top: 45px;
+    transition: border-color 0.5s;
+    border:none!important;
+    color: #ffffff;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 450px;
+}
+

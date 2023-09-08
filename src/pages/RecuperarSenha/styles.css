@@ -1,0 +1,57 @@
+.recuperar-senha-container {
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h2 {
+    color: green;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: green;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid green;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: darkgreen;
+  }
+  
+  p {
+    margin-top: 20px;
+    color: black;
+  }
+  
+  a {
+    color:red;
+  }
+  

@@ -1,0 +1,55 @@
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.aluno-list {
+  list-style: none;
+  padding: 0;
+}
+
+.aluno-item {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  margin: 10px 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.aluno-info {
+  flex: 1;
+}
+
+.aluno-nome {
+  font-weight: bold;
+}
+
+.aluno-email {
+  color: #4caf50;
+}
+
+.error-message {
+  background-color: #f44336;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
