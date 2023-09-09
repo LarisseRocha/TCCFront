@@ -26,11 +26,11 @@ export default function NovoTrabalho() {
     };
 
     try {
-      const response = await api.post("/https://localhost:44320//Tcc", data); // Cadastro das informações do trabalho
+      const response = await api.post("/Tcc", data); // Cadastro das informações do trabalho
       const formData = new FormData();
       formData.append("arquivo", arquivo);
       const arquivoResponse = await api.post(
-        "/https://localhost:44320/Arquivo",
+        "/Arquivo",
         formData
       ); 
       console.log("Trabalho cadastrado com sucesso!");
@@ -90,7 +90,7 @@ export default function NovoTrabalho() {
       for (const formData of formDataArray) {
         console.log(IDTcc);
         const response = await api.post(
-          "https://localhost:44320/api/Arquivo/Upload/" + IDTcc,
+          "api/Arquivo/Upload/" + IDTcc,
           formData,
           {
             headers: { "Content-Type": "multipart/form-data" },

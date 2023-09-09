@@ -17,6 +17,8 @@ function App() {
     NomeProfessor: "",
   });
 
+  console.log("files", files);
+  console.log("tcc", tcc);
   const downloadFiles = async (guid, nomeOriginal) => {
     try {
       const response = await api.get(
@@ -47,6 +49,15 @@ function App() {
     try {
       const response = await api.get("api/Arquivo/BuscarTccs");
       setFiles(response.data);
+    } catch (error) {
+      console.error("Erro ao buscar arquivos:", error);
+    }
+  };
+
+  const fetchTccById = async (id) => {
+    try {
+      const response = await api.get(`api/Tcc/${id}`);
+      setTcc(response.data);
     } catch (error) {
       console.error("Erro ao buscar arquivos:", error);
     }
@@ -161,17 +172,17 @@ function App() {
                     width: "310px",
                   }}
                 >
-                  <strong>Titulo: {item.titulo}</strong>
+                  <strong>Titulo: {item.nomeOriginal}</strong>
                   <strong>Data da Defesa: {item.dataDefesa}</strong>
                   <strong>Área de Estudo: {item.areaEstudo}</strong>
-                  <strong>Nome do Aluno: {item.aluno.nome}</strong>
-                  <strong>Nome do Professor: {item.professor.nome}</strong>
+                  <strong>Nome do Aluno: {item.aluno}</strong>
+                  <strong>Nome do Professor: {item.professor}</strong>
                   <div style={{ display: "flex", gap: "5px", alignItems: "center" }}>
                     <span style={{ color: "black" }}>
-                      {item.arquivo.nomeOriginal}
+                      {item.arquivo}
                     </span>
                     <button
-                      onClick={() => downloadFiles(item.arquivo.guidArquivo, item.arquivo.nomeOriginal)}
+                      onClick={() => downloadFiles(item.guidArquivo, item.nomeOriginal)}
                       type="button"
                     >
                       <FiDownload size={25} color="#179254" />

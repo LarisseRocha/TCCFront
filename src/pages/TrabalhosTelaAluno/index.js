@@ -20,7 +20,7 @@ function App() {
   const downloadFiles = async (guid, nomeOriginal) => {
     try {
       const response = await api.get(
-        `https://localhost:44320/api/Arquivo/Download/${guid}`
+        `api/Arquivo/Download/${guid}`
       );
 
       const blob = new Blob([response.data]);
@@ -54,7 +54,7 @@ function App() {
 
   const consultarTcc = async () => {
     try {
-      const apiUrl = "https://localhost:44320/api/Tcc/ConsultarTcc";
+      const apiUrl = "api/Tcc/ConsultarTcc";
 
       const response = await axios.post(apiUrl, ConsultarTccCommand, {
         Headers: { "Content-Type": "application/json" },
@@ -88,7 +88,7 @@ function App() {
   const buscarTccPorTitulo = async (titulo) => {
     try {
       const response = await api.get(
-        `https://localhost:44320/api/Tcc/{BuscarTccPorTitulo}`
+        `api/Tcc/{BuscarTccPorTitulo}`
       );
       console.log(response);
       // Lógica para tratar a resposta do servidor aqui
@@ -164,11 +164,11 @@ function App() {
                   <strong>Titulo: {item.titulo}</strong>
                   <strong>Data da Defesa: {item.dataDefesa}</strong>
                   <strong>Área de Estudo: {item.areaEstudo}</strong>
-                  <strong>Nome do Aluno: {item.aluno.nome}</strong>
-                  <strong>Nome do Professor: {item.professor.nome}</strong>
+                  <strong>Nome do Aluno: {item.aluno}</strong>
+                  <strong>Nome do Professor: {item.professor}</strong>
                   <div style={{ display: "flex", gap: "5px", alignItems: "center" }}>
                     <span style={{ color: "black" }}>
-                      {item.arquivo.nomeOriginal}
+                      {item.arquivo}
                     </span>
                     <button
                       onClick={() => downloadFiles(item.arquivo.guidArquivo, item.arquivo.nomeOriginal)}

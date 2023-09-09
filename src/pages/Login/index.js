@@ -20,7 +20,7 @@ export default function Login(){
         };
         
         try{
-            const response = await api.post('https://localhost:44320/api/Login/authenticate', data); //api/auth/v{{version}}/signin
+            const response = await api.post('api/Login/authenticate', data); //api/auth/v{{version}}/signin
             console.log(response);
             if (response.status == 200){
                 localStorage.setItem('Cpf', Cpf);
@@ -49,7 +49,7 @@ export default function Login(){
                         value={Senha}
                         onChange={e => setSenha(e.target.value)}/>
 
-                    <button className="buttonlogin" type="submit"><h4>Login</h4></button>
+                    <button className="buttonlogin" type="submit">Login</button>
                 </form>
                 <Link className="buttonCadUsuario" to="/TipoUsuario">
                     <h4>Cadastrar usuário</h4>
@@ -60,6 +60,38 @@ export default function Login(){
         </div>
     );
 }
+/*
+function Login() {
+  const [cpf, setCPF] = useState('');
+  const [senha, setSenha] = useState('');
+
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post('/api/LoginController/BuscarPorUsuario', {
+        cpf: cpf,
+        senha: senha
+      });
+      console.log("Login realizado com sucesso!");
+      Navigate("./Trabalhos");
+      // A autenticação foi bem-sucedida, você pode redirecionar o usuário para outra página
+    } catch (error) {
+      alert('Erro ao fazer login, tente novamente');
+      return;
+    }
+  };
+
+  return (
+    <div>
+      <h2>Login</h2>
+      <input type="text" placeholder="CPF" value={cpf} onChange={(e) => setCPF(e.target.value)} />
+      <input type="password" placeholder="Senha" value={senha} onChange={(e) => setSenha(e.target.value)} />
+      <button onClick={handleLogin}>Login</button>
+    </div>
+  );
+}
+
+export default Login;
+*/
 
 
 

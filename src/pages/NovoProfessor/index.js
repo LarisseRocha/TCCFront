@@ -33,9 +33,9 @@ export default function NovoProfessor() {
     }
 
     try {
-      const apiUrl = "https://localhost:44320/api/Professor";
+      const apiUrl = "api/Professor";
 
-      const response = await axios.post(apiUrl, formData, {
+      const response = await api.post(apiUrl, formData, {
         Headers: { "Content-Type": "application/json" },
       });
 
