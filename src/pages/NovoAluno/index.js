@@ -30,9 +30,9 @@ export default function NovoAluno() {
     }
 
     try {
-      const apiUrl = "https://localhost:44320/api/Aluno";
+      const apiUrl = "api/Aluno";
 
-      const response = await axios.post(apiUrl, formData, {
+      const response = await api.post(apiUrl, formData, {
         Headers: { "Content-Type": "application/json" },
       });
 

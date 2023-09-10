@@ -1,22 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
-import { useEffect, useState } from "react";
 import axios from "axios";
 import "./NovoProfessor.css";
-
 import logo from "../../assets/logoimage.png";
 import api from "../../services/api";
 
 export default function NovoProfessor() {
   const [formData, setFormData] = useState({
-    nome: "",
-    dataNascimento: "",
-    email: "",
-    cpf: "",
-    siape: "",
-    areaInteresse: "",
-    senha: "",
+    Nome: "",
+    DataNascimento: "",
+    SIAPE: "",
+    Email: "",
+    Cpf: "",
+    AreaInteresse: "",
+    Senha: "",
     repetirSenha: "",
   });
 
@@ -44,10 +42,12 @@ export default function NovoProfessor() {
         navigate("/");
       } else {
         navigate("/Trabalhos");
-        alert("Ocorreu um erro ao adicionar professor...");
+        alert("Ocorreu um erro ao adicionar professor");
       }
     } catch (error) {
-      console.error("Erro ao fazer a requisição POST para CadastrarProfessor:", error);
+      setCadastro("Erro ao cadastrar usuário, tente novamente");
+      console.error("Error sending data:", error);
+      return;
     }
   };
 
@@ -57,29 +57,6 @@ export default function NovoProfessor() {
       [inputName]: value,
     }));
   };
-
-  function validarCPF(inputCPF) {
-    var soma = 0;
-    var resto;
-    var inputCPF = document.getElementById("cpf").value;
-
-    if (inputCPF == "00000000000") return false;
-    for (i = 1; i <= 9; i++)
-      soma = soma + parseInt(inputCPF.substring(i - 1, i)) * (11 - i);
-    resto = (soma * 10) % 11;
-
-    if (resto == 10 || resto == 11) resto = 0;
-    if (resto != parseInt(inputCPF.substring(9, 10))) return false;
-
-    soma = 0;
-    for (var i = 1; i <= 10; i++)
-      soma = soma + parseInt(inputCPF.substring(i - 1, i)) * (12 - i);
-    resto = (soma * 10) % 11;
-
-    if (resto == 10 || resto == 11) resto = 0;
-    if (resto != parseInt(inputCPF.substring(10, 11))) return false;
-    return true;
-  }
 
   return (
     <div className="Novo-Professor-container">
@@ -109,24 +86,25 @@ export default function NovoProfessor() {
               }
             />
             <input
+              placeholder="SIAPE"
+              required
+              onChange={(e) =>
+                handleInputChange("SIAPE", e.target.value)
+              }
+            />
+            <input
               placeholder="Email"
               required
               onChange={(e) => handleInputChange("Email", e.target.value)}
             />
             <input
-              placeholder="SIAPE"
-              onChange={(e) => handleInputChange("SIAPE", e.target.value)}
-            />
-            <input
               placeholder="CPF"
-              onChange={(e) => handleInputChange("CPF", e.target.value)}
+              onChange={(e) => handleInputChange("Cpf", e.target.value)}
             />
-            <input
-              placeholder="Area de interesse"
+              <input
+              placeholder="Area de estudos"
               required
-              onChange={(e) =>
-                handleInputChange("AreaInteresse", e.target.value)
-              }
+              onChange={(e) => handleInputChange("AreaInteresse", e.target.value)}
             />
             <input
               placeholder="Senha"
@@ -141,10 +119,20 @@ export default function NovoProfessor() {
               value={repetirSenha}
               onChange={(e) => setRepetirSenha(e.target.value)}
             />
-            <div>
-              <p></p>
-              <button onClick={submitData}>Cadastrar Professor</button>
-            </div>
+
+            {cadastro ? (
+              <div>
+                <p>{cadastro}</p>
+                <button type="button" onClick={() => navigate("/")}>
+                  Login
+                </button>
+              </div>
+            ) : (
+              <div>
+                <p></p>
+                <button type="submit">Cadastrar professor</button>
+              </div>
+            )}
           </form>
         </div>
       </div>

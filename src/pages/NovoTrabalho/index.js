@@ -26,7 +26,7 @@ export default function NovoTrabalho() {
     };
 
     try {
-      const response = await api.post("/Tcc", data); // Cadastro das informações do trabalho
+      const response = await api.post("api/Tcc", data); // Cadastro das informações do trabalho
       const formData = new FormData();
       formData.append("arquivo", arquivo);
       const arquivoResponse = await api.post(
